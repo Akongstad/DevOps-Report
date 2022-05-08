@@ -3,6 +3,8 @@ on:
   push:
     branches: 
       - main
+    paths-ignore:        
+      - '**.pdf'
 jobs:
   build-and-update:
     name: submodule update
