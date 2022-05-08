@@ -4,18 +4,7 @@ on:
     branches: 
       - main
 jobs:
-  build:
-    name: Compile latex to pdf
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v3
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: tex/Main.tex
-          
-  update:
+  build-and-update:
     name: submodule update
     runs-on: ubuntu-latest
     env:
@@ -24,6 +13,13 @@ jobs:
       PR_AGAINST_BRANCH: 'main'
       OWNER: 'Akongstad'
     steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: Main.tex
+          
       # Checkout the code base #
       - name: Checkout Code
         uses: actions/checkout@v3
