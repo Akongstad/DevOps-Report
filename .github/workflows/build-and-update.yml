@@ -1,0 +1,29 @@
+name: Build and Update
+on:
+  push:
+    branches: 
+      - main
+jobs:
+  update:
+    name: submodule update
+    runs-on: ubuntu-latest
+    env:
+      PARENT_REPOSITORY: 'https://github.com/Akongstad/DevOps-group-p.git'
+      CHECKOUT_BRANCH: 'main'
+      PR_AGAINST_BRANCH: 'main'
+      OWNER: 'Akongstad'
+    steps:
+      # Checkout the code base #
+      - name: Checkout Code
+        uses: actions/checkout@v2
+ 
+      # Run the action against code base #
+      - name: run action
+        id: run_action
+        uses: releasehub-com/github-action-create-pr-parent-submodule@v1
+        with:
+          github_token: ${{ secrets.GIT_TOKEN }}
+          parent_repository: ${{ env.PARENT_REPOSITORY }}
+          checkout_branch: ${{ env.CHECKOUT_BRANCH}}
+          pr_against_branch: ${{ env.PR_AGAINST_BRANCH }}
+          owner: ${{ env.OWNER }}
