@@ -21,7 +21,7 @@ jobs:
           root_file: Main.tex
       - name: Upload pdf to repository
         run: | 
-          mv main.pdf report.pdf &&
+          mv Main.pdf report.pdf &&
           git add report.pdf &&
           git commit -m "update report.pdf" &&
           git push
