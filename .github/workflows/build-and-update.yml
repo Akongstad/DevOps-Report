@@ -19,6 +19,11 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: Main.tex
+      - name: Upload pdf to repository
+        uses: actions/upload-artifact@v2
+        with:
+          name: report
+          path: main.pdf
           
       # Checkout the code base #
       - name: Checkout Code
