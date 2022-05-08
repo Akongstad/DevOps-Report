@@ -8,7 +8,7 @@ jobs:
     name: submodule update
     runs-on: ubuntu-latest
     env:
-      PARENT_REPOSITORY: 'https://github.com/Akongstad/DevOps-group-p.git'
+      PARENT_REPOSITORY: 'Akongstad/DevOps-group-p'
       CHECKOUT_BRANCH: 'main'
       PR_AGAINST_BRANCH: 'main'
       OWNER: 'Akongstad'
