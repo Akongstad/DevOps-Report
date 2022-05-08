@@ -1,0 +1,52 @@
+\documentclass{scrartcl}
+\input{FileSetup.tex}
+\usepackage[utf8]{inputenc}
+\usepackage{enumerate}
+\usepackage{relsize}
+\usepackage{steinmetz}
+\usepackage{verbatim}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \includegraphics[width=10cm]{images/ITU_logo_UK jpg.jpg}
+    \vspace{1.5cm}
+    
+	{\huge\bfseries Project Report\par}
+	\vspace{1cm}
+    {\scshape\Large DevOps, Software Evolution and Software Maintenance \par}
+	\vspace{2cm}
+	{\Large\itshape Andreas Kongstad}\par
+	\texttt{kong@itu.dk}\par
+	\vspace{0.5cm}
+	{\Large\itshape Charlotte Schack Berg}\par
+	\texttt{csbe@itu.dk}\par
+	\vspace{0.5cm}
+	{\Large\itshape Eythor Mikael Eythorsson}\par
+	\texttt{eyey@itu.dk}\par
+	\vspace{0.5cm}
+	{\Large\itshape Christian Lüthcke}\par
+	\texttt{clyt@itu.dk}\par
+	\vspace{0.5cm}
+	{\Large\itshape Frederik}\par
+	\texttt{fbah@itu.dk}\par
+	\vfill
+	Instructors:\par
+    Helge Pfeiffer \& Mircea Lungu
+
+	\vspace{1cm}
+
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+
+\newpage
+\input{tex/sections/01-SystemPerspective}
+\input{tex/sections/02-ProcessPerspective}
+\input{tex/sections/03-LessonsLearnedPerspective}
+
+\end{document}
