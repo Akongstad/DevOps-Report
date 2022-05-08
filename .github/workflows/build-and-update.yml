@@ -21,9 +21,11 @@ jobs:
           root_file: Main.tex
       - name: Upload pdf to repository
         run: | 
-          mv Main.pdf report.pdf &&
-          git add report.pdf &&
-          git commit -m "update report.pdf" &&
+          mv Main.pdf report.pdf
+          git config --global user.name ${{ secrets.USER_NAME }} 
+          git config --global user.email ${{ secrets.USER_EMAIL }}
+          git add report.pdf
+          git commit -m "update report.pdf"
           git push
       
       # Checkout the code base #
