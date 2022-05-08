@@ -20,11 +20,12 @@ jobs:
         with:
           root_file: Main.tex
       - name: Upload pdf to repository
-        uses: actions/upload-artifact@v2
-        with:
-          name: report
-          path: main.pdf
-          
+        run: | 
+          mv main.pdf report.pdf &&
+          git add report.pdf &&
+          git commit -m "update report.pdf" &&
+          git push
+      
       # Checkout the code base #
       - name: Checkout Code
         uses: actions/checkout@v3
