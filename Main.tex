@@ -4,9 +4,12 @@
 \usepackage{relsize}
 \usepackage{steinmetz}
 \usepackage{verbatim}
+\usepackage[onehalfspacing]{setspace}
 \input{tex/FileSetup}
 
+
 \begin{document}
+
 
 \begin{titlepage}
     \centering
@@ -17,6 +20,8 @@
 	\vspace{1cm}
     {\scshape\Large DevOps, Software Evolution and Software Maintenance \par}
 	\vspace{2cm}
+	{\Large Group O "TBD"}\par
+	\vspace{0.5cm}
 	{\Large\itshape Andreas Kongstad}\par
 	\texttt{kong@itu.dk}\par
 	\vspace{0.5cm}
@@ -26,10 +31,10 @@
 	{\Large\itshape Eythor Mikael Eythorsson}\par
 	\texttt{eyey@itu.dk}\par
 	\vspace{0.5cm}
-	{\Large\itshape Christian Lüthcke}\par
+	{\Large\itshape Christian Lyon Lüthcke}\par
 	\texttt{clyt@itu.dk}\par
 	\vspace{0.5cm}
-	{\Large\itshape Frederik}\par
+	{\Large\itshape Frederik Baht-Hagen}\par
 	\texttt{fbah@itu.dk}\par
 	\vfill
 	Instructors:\par
@@ -44,10 +49,18 @@
 \newpage
 \tableofcontents
 
+\clearpage
 
-\newpage
 \input{tex/sections/01-SystemPerspective}
+\clearpage
 \input{tex/sections/02-ProcessPerspective}
+\clearpage
 \input{tex/sections/03-LessonsLearnedPerspective}
+\clearpage
 
+\addcontentsline{toc}{section}{References}
+\printbibliography
+\clearpage
+\appendix
+\input{tex/appendix}
 \end{document}

@@ -1,6 +1,6 @@
 % Blaðsíðustillingar
 
-\usepackage{geometry}
+\usepackage[includefoot]{geometry}
 
 \geometry{
 	paper=a4paper, % letterpaper lika til
@@ -8,12 +8,25 @@
 	bottom=1cm, % Bottom margin
 	left=2.5cm, % Left margin
 	right=2.4cm, % Right margin
-	headheight=0.75cm, % Header height
+	headheight=0.75cm,% Header height
 	footskip=1.5cm, % Space from the bottom margin to the baseline of the footer
 	headsep=0.75cm, % Space from the top margin to the baseline of the header
 	%showframe, % Uncomment to show how the type block is set on the page
 }
 
+%--------------------% Page style %-----------------%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\chead{DevOps Project Report}
+\lhead{Group: TBD}
+\rhead{IT-University, Copenhagen}
+
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = red,
+            anchorcolor = blue]{hyperref}
 %-------------------------------- Íslenska ----------------------------
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -37,16 +50,6 @@
 \usepackage{pgfplots}\usepgfplotslibrary{units}
 \pgfplotsset{compat=1.18}
 
-% ----------------- Til að teikna/tekka myndir -----------------------------
-\usepackage{tikz}
-\usepackage{tkz-euclide}
-\usetikzlibrary{math}
-\usepackage{fourier}
-\usetikzlibrary{quotes,angles}
-\usepackage{tkz-euclide}
-\usetikzlibrary{calc}
-%\usetkzobj{all}
-\usepackage[siunitx]{circuitikz} %%<---Circuit Diagrams
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % Nýtt Matlab viðmót
@@ -79,7 +82,6 @@
 	emph={all,equal, minor, on, off, long, short, bank, rat},emphstyle=\color{mylilas},	
 }
 \renewcommand\lstlistingname{\textsc{Matlab}}%
-
 \usepackage{tcolorbox}
 \tcbuselibrary{skins}
 %Hérna vel ég stillingar fyrir ramma sem ég skýri matlabUT
@@ -117,3 +119,14 @@
 
 %--------------------% Storage Path for images %-----------------%
 \graphicspath{{graphics/}{Graphics/}{./}}
+
+%--------------------% Bibliography %-----------------%
+\usepackage[
+backend=biber,
+style=ieee,
+sorting=ynt
+]{biblatex}
+
+\addbibresource{references.bib}
+
+

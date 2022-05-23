@@ -3,27 +3,56 @@
 
 \subsection{Overview}
 \label{subsec:systems_perspective_overview}
+The initial project was a full stack Flask application written in Bash and Python2 with an SQLite database. 
+This implementation (henceforth referenced as TBD-MiniTwit) included refactoring the initial project to the following containerized microservices:
+\begin{itemize}
+    \item C\# backend using the ASP.NET web framework and EF Core ORM
+    \item ReactJS SPA frontend
+    \item PostgreSQL database
+\end{itemize}
+upon which a monitoring and (temporarily) a logging stack were added to be served as a containerized application behind a load-balancer on a managed Kubernetes cluster.
 
 \subsection{System Design}
-\label{subsec:systems_perspective_overview}
+\label{subsec:system_design}
 % - Design of your ITU-MiniTwit systems
+The heart of TBD-MiniTwit is the C\# backend.
+It contains all our business logic and provides two open APIs, an Object-Relational Mapping to our database and exposes application-specific metrics for Prometheus. \\
+CLASS DIAGRAMS FOR BACKEND \\
+STATE MACHINE DIAGRAM FOR LOGIN \\
 
 \subsection{System Architecture}
-\label{subsec:systems_perspective_overview}
+\label{subsec:system_architecture}
 % - Architecture of your ITU-MiniTwit systems
 % - All dependencies of your ITU-MiniTwit systems on all levels of abstraction and development stages.
 % - That is, list and briefly describe all technologies and tools you applied and depend on.
+This implementation follows the \textbf{Microservice Architecture Pattern} \\
+EXPLAIN THE PATTERN \\
+CREATE DIAGRAMS \\
+
 
 \subsection{Subsystem Interactions}
 \label{subsec:subsystem_interactions}
 % - Important interactions of subsystems
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|} \hline
+         Prometheus \\ \hline
+         MinitwitAPI \\ \hline
+         LoadBalancer \\ \hline
+    \end{tabular}
+    \caption{Network interfaces}
+    \label{tab:my_label}
+\end{table}
+
+\subsection{System state}
+\label{subsec:system_state}
 % - Describe the current state of your systems, for example using results of static analysis and quality assessment systems.
 
 
 \subsection{License Compatibility}
 \label{subsec:license_compatability}
-The project uses MIT license meaning everyone can use and modify.
 % - Finally, describe briefly, if the license that you have chosen for your project is actually compatible with the licenses of all your direct dependencies.
+The project uses MIT license meaning everyone can use and modify.
 
 % A description and illustration of the:
 % - Double check that for all the weekly tasks (those listed in the schedule) you include the corresponding information.
