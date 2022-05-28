@@ -52,7 +52,22 @@ CREATE DIAGRAMS \\
 \subsection{License Compatibility}
 \label{subsec:license_compatability}
 % - Finally, describe briefly, if the license that you have chosen for your project is actually compatible with the licenses of all your direct dependencies.
-The project uses MIT license meaning everyone can use and modify.
+%this is only a draft - the file from scancode is quite big, so still missing some parts..
+The initial license chosen was MIT, which means everyone can use and modify the code freely.
+However, when we used a tool called \textit{ScanCode} (\footnote{Scancode toolkit documentation\cite{Scancode}}) to determine if our chosen license would clash with a license in the imports we use by scanning the files in the project, we discovered that some of our imports used Apache License 2.0 and BSD-3-Clause, meaning we had to change license. Some imports used all three licenses mentioned above. The tool has briefly been mentioned throughout the course.
+The new license is Apache 2.0 as a result of running \textit{ScanCode} to have a license that is compatible with our imports. The scan seemed to fail on some licenses as it stated them as \textit{Unknown license}, however, since the other licenses encountered are the three mentioned previously, then it is likely not to be a problem.
+%Idk if you want to check for yourself if multiple licenses are used in the same file.. but an example is The pack in line 50432-51470 in result.json, which is quite a big file.
+
+%NEEDS REWRITE - turns out the imports we use in the code only uses MIT and Apache 2.0... seems like the other licenses are the imports' dependencies' licenses - the imports we use licenses is below.
+%React.router = mit license
+%react-router-dom = mit license
+%prop-types = mit license
+%@mui/material = mit license
+%markdown-to-jsx = mit license
+%react = mit license
+%react-router = mit license
+%yup = mit license
+%formik = Apache license 2.0
 
 % A description and illustration of the:
 % - Double check that for all the weekly tasks (those listed in the schedule) you include the corresponding information.
