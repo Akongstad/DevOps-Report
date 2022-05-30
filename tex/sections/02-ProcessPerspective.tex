@@ -1,8 +1,6 @@
 \section{Process' Perspective}
 \label{sec:processPerspective}
 
-\subsection{Overview}
-\label{subsec:overview}
 The main focus of the \hyperref[sec:processPerspective]{Process' Perspective section} will be how code and artifacts go from idea to production and which tools and processes are involved?\\
 \hyperref[subsec:TeamInteraction]{2.2 Team Interaction and Organization} will discuss communication within the team. \hyperref[subsec:cicd]{2.3 CI/CD chains} will reason for the choice of CI/CD platform and take a deeper look and both CI and CD chains.
 \hyperref[subsec:vs]{2.4 Version Control} discusses strategies related to the way version control is used and managed. These include repository setup and branching strategy. In 
@@ -20,7 +18,7 @@ Most internal planning and communication have gone through \href{https://discord
 % - A complete description of stages and tools included in the CI/CD chains.
 % That is, including deployment and release of your systems.
 
-Utilizing a CI/CD pipeline allows us to test, build, and deploy the MiniTwit service incrementally with minimal manual interference. Thus, saving us a significant amount of time setting up environments, allowing us to deploy fast and often while still being able to revert to an earlier version quickly.
+Utilizing a CI/CD pipeline allows us to test, build, and deploy TBD-MiniTwit incrementally with minimal manual interference. Thus, saving us a significant amount of time setting up environments, allowing us to deploy fast and often while still being able to revert to an earlier version quickly.
 It provides us with ways of measuring and improving the quality of all code coming from local development to version control and eventually reaching production, and by that reduces human error.\footnote{Continuous delivery: Huge benefits, but challenges too\cite{Chen2015}}
 In essence, an automated CI/CD pipeline puts multiple DevOps ideas into practice: 
 \begin{itemize}
@@ -133,8 +131,8 @@ Using the logging system, we noticed that the server received requests from all 
 
 \subsubsection{Secret Handling}
 \label{subsubsec:secrets}
-Securing sensitive data while allowing access to multiple parties is a challenging ordeal.
-
+Securing sensitive data while allowing access to multiple parties is a challenging ordeal. We use GitHub secrets for securing tokens and keys that are then accessed and injected into our CI/CD pipeline. We have a local folder containing the database connection string, database-password, and jwt token key. The folder is shared through discord. Security could be improved by splitting the key into multiple parts and sharing them separately. However, we deemed this excessive.
+\clearpage
 \subsection{Scaling And Load balancing}
 \label{subsec:scaling}
 % Applied strategy for scaling and load balancing.
@@ -146,7 +144,12 @@ The original single server setup that was deployed on a digital ocean droplet us
 Although now deprecated, the production branch had our production server and was our main branch's lean and automated counterpart. It was developed in a manner such that our multi-container application could be rebuilt and updated on the production server to include updated Docker images and changes in configuration files with a single command, minimizing downtime without using load-balancers.\\
 Although cheap and easy to set up. The original single-server architecture had several shortcomings if we were to handle additional traffic while minimizing downtime.
 Only vertical scaling using the digital ocean API was possible. This approach has multiple downsides. It will become exceedingly more expensive as more virtual CPU cores, RAM, and disk space is added, eventually reaching an upper limit. The single monolithic VM will forever be a single point of failure, and upgrading the VM will require the server to shut down.
-(MAYBE INCLUDE COMPONENT DIAGRAM)
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.49]{images/DevopsDiagrams-Legacy deploy mini.drawio.png}
+    \caption{TBD-MiniTwit single server deployment diagram}
+    \label{fig:legacyDeploy}
+\end{figure}
 
 \subsubsection{Scaling the application}
 \label{subsubsec:scalingApp}

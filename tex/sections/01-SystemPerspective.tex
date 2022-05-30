@@ -19,6 +19,31 @@ The heart of TBD-MiniTwit is the C\# backend.
 It contains all our business logic and provides two open APIs, an Object-Relational Mapping to our database and exposes application-specific metrics for Prometheus. \\
 CLASS DIAGRAMS FOR BACKEND \\
 STATE MACHINE DIAGRAM FOR LOGIN \\
+%This will be the module viewpoint
+
+\begin {figure}[H]
+    \centering
+    \includegraphics[draft]{foo}
+    \caption{Package overview diagram fro MiniTwit-TBD}
+    \label{fig:legacyDeploy}
+\end{figure}
+
+\begin {figure}[H]
+    \centering
+    \includegraphics[draft]{foo}
+    \caption{Decomposition of x package of the POS system}
+    \label{fig:legacyDeploy}
+\end{figure}
+
+
+
+\begin {figure}[H]
+    \centering
+    \includegraphics[draft]{foo}
+    \caption{C&C overview of MiniTwit-TBD}
+    \label{fig:legacyDeploy}
+\end{figure}
+
 
 \subsection{System Architecture}
 \label{subsec:system_architecture}
@@ -28,6 +53,21 @@ STATE MACHINE DIAGRAM FOR LOGIN \\
 This implementation follows the \textbf{Microservice Architecture Pattern} \\
 EXPLAIN THE PATTERN \\
 CREATE DIAGRAMS \\
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.45]{images/DevopsDiagrams-Deployment k8s.drawio.png}
+    \caption{TBD-MiniTwit deployment diagram}
+    \label{fig:figDeploy}
+\end{figure}
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.45]{images/DevopsDiagrams-Deployment worker nodes.drawio(2).png}
+    \caption{TBD-MiniTwit deployment diagram. Worker nodes.}
+    \label{fig:figDeployWorker}
+\end{figure}
+
+%Components and connectors view
+% Allocation view.
 
 
 \subsection{Subsystem Interactions}
@@ -47,6 +87,11 @@ CREATE DIAGRAMS \\
 \subsection{System state}
 \label{subsec:system_state}
 % - Describe the current state of your systems, for example using results of static analysis and quality assessment systems.
+% Wait until after cleanup when frontend is merged.
+\hyperref[app:codeAnal]{Code analysis dashboards}
+To be able to argue about the quality of our code, we have enhanced our CI pipeline with static code analysis tools. These analyse and rate the TBD-MiniTwit in accordance with their own definition of code quality. According to the \hyperref[fig:hubStatus]{Better Code Hub quality status} our codebase is in compliance with 9 of 10 measures for quality, while failing on code duplication. The reason for this is, that the MiniTwit system supports both a simulator api and an api for the frontend. When refactoring infrastructure code for the frontend api, we kept the infrastructure for the simulator resulting in code duplication.
+Sonarcloud suggests that we have a technical debt of 55min, all of which is from the Simulation Controller and it´s infrastructure class. It also located 8 code smells, but still gives the main branch an grade of A. See \hyperref[fig:cloudMaintainability]{sonarcloud maintainability scores} 
+
 
 
 \subsection{License Compatibility}
