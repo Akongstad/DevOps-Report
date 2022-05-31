@@ -6,11 +6,11 @@
 \usepackage{verbatim}
 \usepackage[onehalfspacing]{setspace}
 \input{tex/FileSetup}
-
+\input{tex/commands}
 
 \begin{document}
 
-
+%TC:ignore
 \begin{titlepage}
     \centering
     \includegraphics[width=10cm]{images/ITU_logo_UK jpg.jpg}
@@ -50,6 +50,8 @@
 \tableofcontents
 
 \clearpage
+%TC:endignore
+
 
 \input{tex/sections/01-SystemPerspective}
 \clearpage
@@ -58,9 +60,11 @@
 \input{tex/sections/03-LessonsLearnedPerspective}
 \clearpage
 
+%TC:ignore
 \addcontentsline{toc}{section}{References}
 \printbibliography
 \clearpage
 \appendix
 \input{tex/appendix}
+%TC:endignore
 \end{document}

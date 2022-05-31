@@ -16,18 +16,75 @@
 \label{app:secAss}
 \href{https://github.com/Akongstad/DevOps-group-p/blob/main/SECURITY.md}{https://github.com/Akongstad/DevOps-group-p/blob/main/SECURITY.md}
 
+\subsubsection{Tests}
+\label{app:testSuite}
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.42]{images/testCoverage.png}
+    \caption{Test coverage 31/05/22. (Generated code and main excluded)}
+    \label{fig:testCov}
+\end{figure}
+
+\subsubsection{Monitoring}
+\label{app:monitoring}
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.42]{images/SimulatorMonitor.PNG}
+    \caption{Monitoring Dashboard from the simulator}
+    \label{fig:simMonitor}
+\end{figure}
+
 \subsection{Code analysis dashboards}
 \label{app:codeAnal}
 
 \subsubsection{sonarcloud}
 \label{app:codeAnalSonar}
-\href{https://sonarcloud.io/project/overview?id=Akongstad_DevOps-group-p}{https://sonarcloud.io/project/overview?id=Akongstad_DevOps-group-p}
+\href{https://sonarcloud.io/project/overview?id=Akongstad_DevOps-group-p}{https://sonarcloud.io/project/overview?id=Akongstad\_DevOps-group-p}
 
 \begin {figure}[H]
     \centering
-    \includegraphics[scale=0.42]{images/analys debt.PNG}
-    \caption{Sonarcloud maintainability scores}
+    \includegraphics[scale=0.42]{images/analysis_tools/Sonar cloud backend.PNG}
+    \caption{Sonarcloud maintainability scores 31/05/22}
     \label{fig:cloudMaintainability}
+\end{figure}
+
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.41]{images/analysis_tools/analys debt.PNG}
+    \caption{Sonarcloud maintainability scores 30/05/22}
+    \label{fig:cloudMaintainability}
+\end{figure}
+
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.39]{images/analysis_tools/SonarCloudCsharp.PNG}
+    \caption{Sonarcloud language distribution 31/05/22}
+    \label{fig:cloudLangDis}
+\end{figure}
+
+\subsubsection{Code Climate}
+\label{app:codeClimate}
+\href{https://codeclimate.com/github/Akongstad/DevOps-group-p}{https://codeclimate.com/github/Akongstad/DevOps-group-p}
+
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.50]{images/analysis_tools/codeClimateDash.PNG}
+    \caption{Code Climate repository status 31/05/22}
+    \label{fig:codeClimateDash}
+\end{figure}
+
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.50]{images/analysis_tools/codeClimateTechDebt.PNG}
+    \caption{Code Climate technical depth progression graph 31/05/22}
+    \label{fig:codeClimateDepth}
+\end{figure}
+
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.50]{images/analysis_tools/CodeClimateTrendsCode.PNG}
+    \caption{Code Climate language distribution graph 31/05/22}
+    \label{fig:codeClimateLangDis}
 \end{figure}
 
 \subsubsection{Better Code Hub}
@@ -36,18 +93,58 @@
 
 \begin {figure}[H]
     \centering
-    \includegraphics[scale=0.50]{images/analysis 9of10.PNG}
-    \caption{Better Code Hub repository status}
+    \includegraphics[scale=0.45]{images/analysis_tools/analysis 9of10.PNG}
+    \caption{Better Code Hub repository status 30/05/22}
     \label{fig:hubStatus}
 \end{figure}
 
+
 \subsubsection{DeepScan}
 \label{app:codeAnalDeep}
-\href{https://deepscan.io/dashboard/\#view=project&tid=17220&pid=20572&bid=562975}{https://deepscan.io/dashboard/\#view=project&tid=17220&pid=20572&bid=562975}
+\href{https://deepscan.io/dashboard/\#view=project\&tid=17220\&pid=20572\&bid=562975}{https://deepscan.io/dashboard/\#view=project\&tid=17220\&pid=20572\&bid=562975}
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.40]{images/analysis_tools/deepscan.PNG}
+    \caption{DeepScan dashboard 31/05/22}
+    \label{fig:deepscan}
+\end{figure}
 
 \subsubsection{snyk}
 \label{app:codeAnalSnyk}
 \href{https://app.snyk.io/org/akongstad}{https://app.snyk.io/org/akongstad}
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.40]{images/analysis_tools/snykDashboard.PNG}
+    \caption{Snyk Dashboard 31/05/2022}
+    \label{fig:snykAlert}
+\end{figure}
+
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.40]{images/analysis_tools/alertSnyk.PNG}
+    \caption{Snyk scan alert 31/05/2022}
+    \label{fig:snykAlert}
+\end{figure}
+
+\subsubsection{Github - Dependabot}
+\label{app:codeAnalDependabot}
+\href{https://github.com/Akongstad/DevOps-group-p/security/dependabot}{https://github.com/Akongstad/DevOps-group-p/security/dependabot}
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.50]{images/analysis_tools/alertDependabot.PNG}
+    \caption{Dependabot scan results 31/05/2022}
+    \label{fig:dependabot}
+\end{figure}
+
+\subsubsection{Github - Code scanning tools}
+\label{app:codeAnalQl}
+\href{https://github.com/Akongstad/DevOps-group-p/security/code-scanning}{https://github.com/Akongstad/DevOps-group-p/security/code-scanning}
+\begin {figure}[H]
+    \centering
+    \includegraphics[scale=0.50]{images/analysis_tools/CodeQlScan.PNG}
+    \caption{CodeQl scan results 31/05/2022}
+    \label{fig:codeql}
+\end{figure}
 
 
 

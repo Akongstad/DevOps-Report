@@ -18,7 +18,7 @@ Most internal planning and communication have gone through \href{https://discord
 % - A complete description of stages and tools included in the CI/CD chains.
 % That is, including deployment and release of your systems.
 
-Utilizing a CI/CD pipeline allows us to test, build, and deploy TBD-MiniTwit incrementally with minimal manual interference. Thus, saving us a significant amount of time setting up environments, allowing us to deploy fast and often while still being able to revert to an earlier version quickly.
+Utilizing a CI/CD pipeline allows us to test, build, and deploy \mini incrementally with minimal manual interference. Thus, saving us a significant amount of time setting up environments, allowing us to deploy fast and often while still being able to revert to an earlier version quickly.
 It provides us with ways of measuring and improving the quality of all code coming from local development to version control and eventually reaching production, and by that reduces human error.\footnote{Continuous delivery: Huge benefits, but challenges too\cite{Chen2015}}
 In essence, an automated CI/CD pipeline puts multiple DevOps ideas into practice: 
 \begin{itemize}
@@ -43,7 +43,7 @@ As illustrated in \hyperref[fig:CIStateMachine]{Figure 1}, the entry point for t
 
 \begin {figure}[H]
     \centering
-    \includegraphics[scale=0.50]{images/DevopsDiagrams-StateMachine CI.drawio(4).png}
+    \includegraphics[scale=0.50]{images/ci_cd_diagrams/DevopsDiagrams-StateMachine CI.drawio(4).png}
     \caption{CI Pipeline State Machine Diagram}
     \label{fig:CIStateMachine}
 \end{figure}
@@ -63,7 +63,7 @@ The workflow is triggered every time a release is created. It also supports manu
 
 \begin {figure}[H]
     \centering
-    \includegraphics[scale=0.50]{images/DevopsDiagrams-StateMachineCd.drawio.png}
+    \includegraphics[scale=0.50]{images/ci_cd_diagrams/DevopsDiagrams-StateMachineCd.drawio.png}
     \caption{CD Pipeline State Machine Diagram}
     \label{fig:CDStateMachine}
 \end{figure}
@@ -78,6 +78,7 @@ When checks have passed and the apply workflow has been dispatched, the runner w
 % In essence, it has to be be clear what is stored where and why
 \subsubsection{Organization of Repositories}
 %Do we use a single or multi repo setup. --> we Use submodules and automatic steps for updating them
+We have submodules for extra repositories, and use automatic steps to update them. We have two submodules, one for the report, and one for the deployment.
 % Draft: feel free to edit/ delete
 \subsubsection{Branching Strategy}
 %branching STRATEGY:
@@ -121,7 +122,7 @@ GitHub issues track what needs to be done and how far a task is from completion.
 To discover, define, and asses vulnerabilities of our system, we have conducted a security assessment and a pen-test. This section will include only select results. The rest is available in \hyperref[app:secAss]{Secuirity Assesment section of the Appendix}.
 
 Using the \href{https://owasp.org/Top10/}{OWASP Top 10} we identified possible insecurities in our system. We constructed risk scenarios and analyzed their likelihood and impact. 
-The analysis yielded "Outdated Components" as a top concern. As security breaches on are discovered half a year later on average, the way to combat security threats is proactivity\footnote{Security lecture. Add citation}. To decrease chance of having outdated components in production, we added dependabot to our GitHub repository and snyk to our CI chain. Dependabot creates pull requests automatically suggesting updates to outdated components. Snyk scans the repository for dependencies with vulnerabilities. It also scans for sensitive data leaks. Handling of secrets to prevent such leaks will be described in the \hyperref[subsubsec:secrets]{Secret Handling} section.
+The analysis yielded "Outdated Components" as a top concern. As security breaches on are discovered half a year later on average, the way to combat security threats is proactivity\footnote{Security lecture. \cite{securitylecture}}. To decrease chance of having outdated components in production, we added dependabot to our GitHub repository and snyk to our CI chain. Dependabot creates pull requests automatically suggesting updates to outdated components. Snyk scans the repository for dependencies with vulnerabilities. It also scans for sensitive data leaks. Handling of secrets to prevent such leaks will be described in the \hyperref[subsubsec:secrets]{Secret Handling} section.
 We also conducted an automated penetration test to:
 \begin{enumerate}
     \item Detect vulnerabilities
@@ -146,8 +147,8 @@ Although cheap and easy to set up. The original single-server architecture had s
 Only vertical scaling using the digital ocean API was possible. This approach has multiple downsides. It will become exceedingly more expensive as more virtual CPU cores, RAM, and disk space is added, eventually reaching an upper limit. The single monolithic VM will forever be a single point of failure, and upgrading the VM will require the server to shut down.
 \begin {figure}[H]
     \centering
-    \includegraphics[scale=0.49]{images/DevopsDiagrams-Legacy deploy mini.drawio.png}
-    \caption{TBD-MiniTwit single server deployment diagram}
+    \includegraphics[scale=0.47]{images/deployment_diagrams/DevopsDiagrams-Legacy deploy mini.drawio.png}
+    \caption{\mini single server deployment diagram}
     \label{fig:legacyDeploy}
 \end{figure}
 

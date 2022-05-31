@@ -1,18 +1,28 @@
 \section{Lessons Learned}
 \label{sec:lessons_learned}
 % Describe the biggest issues, how you solved them, and which are major lessons learned with regards to:
-The following section contains the lessons learned, bigger issues encountered and how they were solved.
+The following section contains the lessons learned, bigger issues encountered, how they were solved, and reflections on the project.
 \subsection{Refactoring}
 % - evolution and refactoring
 % Notes: Translating the flask frontend to react.deciding what language and framework to work with for front- and backend. Major lessons? Learned a little python through refactoring from python to c#?
-An issue we had when refactoring from the original mini-twit to C\# and ReactJS was \textit{transcribing} the flask frontend to ReactJS. Most of the team had little to no experience with the framework before working on the project, though the biggest issue were understanding what the flask module were doing. The team solved the issue by stop looking at the flask frontend and make our own with inspiration from the original structure in the UI. The team learned to understand python when refactoring to C\#. 
+An issue we had when refactoring from the original mini-twit to \cs and ReactJS was \textit{transcribing} the flask frontend to ReactJS. Most of the team had little to no experience with the framework before working on the project, though the biggest issue were understanding what the flask module were doing. The team solved the issue by stop looking at the flask frontend and make our own with inspiration from the original look in the UI. The team learned to understand python when refactoring to \cs as well as when we needed to make the API for the simulation.
+It was easier determining what the language in the backend should be as most preferred \cs, another suggested language would have been python without the flask module.
 
 
 \subsection{Maintenance}
 % - operation, and maintenance of your ITU-MiniTwit systems. Link back to respective commit messages, issues, tickets, etc. to illustrate these.
+As the simulation were running, we made maintenance on the program, fixing smaller issues such as the login and register for the simulator did not seem to be working on the start day of the simulation, which we caught onto and fixed in the same evening\footnote{pull request fixing login \& register\cite{loginIssue}}.
+We figured out the issue might was something with how the checked as well as not awaiting async calls as our methods in our controllers are async, meaning we have to await them when calling the methods. While fixing this issue we did some clean up on the affected parts of the code to have cleaner code and prevent that some odd code would case unexpected bugs. However, this issue caused us to lose data as we could not register users, but after the refactoring the code, and when the next batch of users from the simulation were sent to our API the problem no longer occurred.
+Another issue we had were that our follow and unfollow endpoints suddenly stopped working\footnote{issue illustrating problem\cite{issue172}}. The problem were indirectly solved when we did more refactoring on the system, however we would likely not have caught the issue if it were not for the monitoring we had implemented at that time.
+%brb - also trying to find the place where we had issues with the db in the start
+%1/3 sim start
 
-
-\subsection{DevOps adaptation}
-
+\subsection{DevOps Adaptation}
 % - Also reflect and describe what was the "DevOps" style of your work. For example, what did you do differently to previous development projects and how did it work?
 %Notes: automatic releases, more than 1 github action to ensure code quality
+%Draft:
+During the project the team has implemented automatic releases, meaning we release every week at a specific time. This is done through a GitHub Action called \texttt{release\_schedule}, which runs every Sunday at 22:18.
+This action can also be triggered manually in case something goes wrong with a release, so we can quickly make another release\footnote{release\_schedule workflow\cite{gitRelease}}.
+Additionally, as mentioned earlier in \ref{subsec:system_state}, we have multiple Actions running on every push and pull request to the main branch, that aims to ensure code quality, etc. checking if there is any code duplication, unused variables and imports etc..
+
+Using automatic releases and static code analysis tools have helped improving the overall quality of the code as well as ensure that we are releasing once every week with automatic release notes of new accepted changes to the main branch. This also means we do not have to think too much about releasing as it is done automatically for us, meaning we have more time to focus on other aspects of the project, such as maintenance.
