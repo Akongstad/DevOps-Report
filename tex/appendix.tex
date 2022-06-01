@@ -29,13 +29,13 @@
 \label{app:monitoring}
 \begin {figure}[H]
     \centering
-    \includegraphics[scale=0.42]{images/monitoring/monitoring1.PNG}
+    \includegraphics[scale=0.30]{images/monitoring/monitoring1.PNG}
     \caption{Monitoring Dashboard from the Grafana}
     \label{fig:simMonitor}
 \end{figure}
 \begin {figure}[H]
     \centering
-    \includegraphics[scale=0.42]{images/monitoring/monitoring2.PNG}
+    \includegraphics[scale=0.30]{images/monitoring/monitoring2.PNG}
     \caption{Monitoring Dashboard from the Grafana}
     \label{fig:simMonitor}
 \end{figure}
@@ -63,7 +63,7 @@
 
 \begin {figure}[H]
     \centering
-    \includegraphics[scale=0.41]{images/analysis_tools/analys debt.PNG}
+    \includegraphics[scale=0.37]{images/analysis_tools/analys debt.PNG}
     \caption{Sonarcloud maintainability scores 30/05/22}
     \label{fig:cloudMaintainability}
 \end{figure}
@@ -161,22 +161,27 @@
 \end{figure}
 
 \subsection{Dependencies}
+\label{app:dependencies}
 \begin{enumerate}
-    \item \textbf{Docker} - Containerization platform.
-    \item \textbf{Docker-Compose} - Running multiple containers in development.
-    \item \textbf{DockerHub} - Pushing images to and pulling images from during deployment.
-    \item \textbf{Markdown} - Used to make readme and other .md files in the repositories.
+    \item \textbf{Containerization} - Includes:
+    \begin{itemize}
+        \item \textbf{Docker} - Containerization platform.
+        \item \textbf{Docker-Compose} - Running multiple containers in development.
+        \item \textbf{Docker Hub} - Pushing images to and pulling images from during deployment.
+    \end{itemize}
     \item \textbf{Markup} - docker-compose files, manifests, workflows.
-    \item \textbf{.NET 6} - Used for building the backend. Includes:
+    \item \textbf{Backend} - Includes:
     \begin{itemize}
         \item \textbf{\cs 10} - Programming language used for the backend.
+        \item \textbf{.NET 6} - Used for building the backend.
         \item \textbf{ASP.NET Core} - Framework for building web applications.
         \item \textbf{NuGet} - The .NET package manager. The application dependency tree include all packages installed and their dependencies.
         \item \textbf{Entity Framework Core} - Object relation mapper.
     \end{itemize}
-    \item \textbf{React} - Frontend framework. Includes
+    \item \textbf{Frontend} - Includes:
     \begin{itemize}
         \item \textbf{JavaScript} - Programming language used for the frontend.
+        \item \textbf{React} - Frontend framework.
         \item \textbf{WebPack} - Module bundler for JavaScript files.
         \item \textbf{npm} - The node package manager. The application dependency tree include all packages installed and their dependencies.
     \end{itemize}
@@ -186,9 +191,10 @@
     \item \textbf{Nginx} - Web serving and reverse proxying in development.
     
     %VCS and CI/CD
-    \item \textbf{GitHub} - Distributed version-control platform. Includes
+    \item \textbf{Version Control} - Includes:
     \begin{itemize}
         \item \textbf{Git} - Version control.
+        \item \textbf{GitHub} - Distributed version-control platform.
         \item \textbf{GitHub Actions} - Automates, customizes, and executes software development workflows in repositories. CI/CD Pipeline is built with GitHub actions. Used for creating weekly releases and automatically updating submodules.
         \item \textbf{Dependabot} - Automatically scans and update dependencies in the GitHub repository by creating pull requests. Also scans dependencies for vulnerabilities.
     \end{itemize}
@@ -197,7 +203,7 @@
     \begin{itemize}
         \item \textbf{Sonarcloud} - Maintainability and Technical Debt estimation tool.
         \item \textbf{CodeClimate} -  Maintainability and Technical Debt estimation tool.
-        \item \textbf{BetterCodeHub} -  Source code analysis service that checks a codebase for compliance with guidelines for maintainable code
+        \item \textbf{Better Code Hub} -  Source code analysis service that checks a codebase for compliance with guidelines for maintainable code
         \item \textbf{DeepScan} - Static analysis tool for JavaScript.
         \item \textbf{Snyk} - Developer security platform. Integrated into CI chain scanning the code for vulnerabilities. Scans containers and cancels CD if quality gate is met or exceeded.
     \end{itemize}
@@ -205,8 +211,9 @@
     \item \textbf{Terraform} - Infrastructure as code used to create and deploy a Kubernetes cluster on digital ocean.
     \item \textbf{Bash} - Shell and command language. Used in all stages of development. From shell scripts that automate deployment of \mini onto the cluster to simply running the development environment locally.
     \item \textbf{DigitalOcean} - Cloud infrastructure provider, that hosts the Kubernetes cluster.
-    \item \textbf{Kubernetes} - Container orchestration tool. Used for networking, scaling, load balancing. \mini individual microservices runs in pods on the worker vm of the Kubernetes cluster.
+    \item \textbf{Container orchestration} - Includes:
     \begin{itemize}
+        \item \textbf{Kubernetes} - Container orchestration tool. Used for networking, scaling, load  balancing.\mini individual microservices runs in pods on the worker vm of the Kubernetes cluster
         \item \textbf{Kubernetes command line tool (kubectl)} - Tool allowing developers to interact with a cluster, given they have the cluster configuration file.
         \item \textbf{Helm} - Kubernetes package manager. The application dependency tree include all packages installed and their dependencies.
     \end{itemize}
