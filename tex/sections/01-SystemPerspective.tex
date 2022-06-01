@@ -24,7 +24,7 @@ We do this by following The Dependency Rule, which states that source code depen
     \label{fig:diagramClass}
 \end{figure}
 
-In figure \ref{fig:diagramClass} we can see the new refactored design: every dependency point towards the core-package and each higher-level tier only have dependencies towards a tier closer to the core.  Note that each entity has a separate implementation of the repository-, DTO- and controller-class; this complies to the single responsibility principle. Additionally we only depend on abstractions, i. e. the UserController depend on the IUserRepository, not directly on implementation of UserRepository. All these principles derive from the SOLID-principles (also introduced by Martin).\\
+In figure \ref{fig:diagramClass} we can see the new refactored design: all dependencies point towards the core-package and each higher-level tier only have dependencies towards a tier closer to the core.  Note that each entity has a separate implementation of the repository-, DTO- and controller-class; this complies to the single responsibility principle. Additionally we only depend on abstractions, i. e. the UserController depend on the IUserRepository, not directly on implementation of UserRepository. All these principles derive from the SOLID-principles (also introduced by Martin).\\
 
 
 The most interesting part of the system is the backend, which decomposition can be seen in Figure \ref{fig:decompositionBackend}.
@@ -105,7 +105,7 @@ The Kubernetes resource \texttt{Services}, provides stable IP addresses, DNS nam
 Traffic to microservices is sent to DNS addresses and resolved by the internal cluster DNS, to the IP address of the relevant Services, before being routed to healthy pods via an \texttt{Endpoint} object that stores a dynamic list of healthy pods matching the Service object's labels \cite{k8sbook}.
 
 \subsubsection{The Cluster Network}
-Kubernetes abstracts a cluster of hosts to a single platform, see \textit{Cluster Network} in Figure \ref{fig:network_components}, providing a filesystem, DNS, network, and memory sharing and computational resources. Any process or device connected is also discoverable on the network, allowing communication between pods 
+Kubernetes abstracts a cluster of hosts to a single platform, see \textit{Cluster Network} in Figure \ref{fig:network_components}, providing a filesystem, DNS, network, and memory sharing and computational resources. Any process or device connected is also discoverable on the network, allowing communication between pods give 
 The Cluster Network operates similarly to a local network on any regular host in such a way that any device or process on the network is discoverable by other entities on the same network. 
 Hence, given that a pod knows the IP of another pod on the cluster network, traffic between them is possible, though traffic via Service objects is preferable.
 \subsubsection{The LoadBalancer}
