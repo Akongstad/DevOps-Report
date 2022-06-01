@@ -14,9 +14,9 @@ We have decoupled the original MiniTwit class into separate classes, adhering to
 We now see the benefits of infrastructure as code. The original legacy system felt fickle as it had undocumented manual changes. Thus reverting or redeploying became hard. Without logging all changes to the system, it is impossible to reach a state of transparency where every team member knows what is going on in the system. After implementing infrastructure as code for provisioning a cluster\cite{opsIssue5} we had detailed documentation of what was done to the system, and reprovision was automated.
 \subsection{Maintenance}
 % - operation, and maintenance of your ITU-MiniTwit systems. Link back to respective commit messages, issues, tickets, etc. to illustrate these.
-As the simulation was running, we made maintenance on the program, fixing issues such as authentication for the simulator\footnote{pull request fixing login \& register\cite{loginIssue}}.
+As the simulation was running, we made maintenance on the program, fixing issues such as authentication for the simulator\footnote{Pull request fixing login \& register\cite{loginIssue}}.
 This issue caused us to lose data as we could not register users. The problem no longer occurred when the simulator moved to the next batch.
-Another issue we had was that our follow and unfollow endpoints suddenly stopped working\footnote{issue illustrating problem\cite{issue172}}. The problem was indirectly solved when we did more refactoring on the system. However, we would likely not have caught the issue if it were not for the monitoring we had implemented at that time.\\
+Another issue we had was that our follow and unfollow endpoints suddenly stopped working\footnote{Issue illustrating problem\cite{issue172}}. The problem was indirectly solved when we did more refactoring on the system. However, we would likely not have caught the issue if it were not for the monitoring we had implemented at that time.\\
 Our follower issues were related to inconsistent or missing user data in the database, which was common among the other groups. This made us realize the importance of keeping a database backup in case of data loss. This is especially important when serving live users, which the simulation allowed us to do, as service uptime and data consistency are essential for users.
 
 \subsection{DevOps Adaptation}
